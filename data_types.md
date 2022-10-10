@@ -1,6 +1,8 @@
 # DATA TYPES
 
-## **`mdstrings`**
+## **`CkStrings`**
+
+> see https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/saving-data.html
 
 ```go
 type MdString string

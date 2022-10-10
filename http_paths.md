@@ -11,7 +11,7 @@
 
 ## Getters
 
-> Every time an ID is asked as a parameter **only in getter requests**, `bulk` can be specified instead; in this case the request body must contain a valid json encoded list of IDs and the server will respond with an array of every id that matched or in the case of category added or removed,
+> Are done with the **GET** Every time an ID is asked as a parameter **only in getter requests**, `bulk` can be specified instead; in this case the request body must contain a valid json encoded list of IDs and the server will respond with an array of every id that matched or in the case of category added or removed,
 (Note that the max number of ids per request may be capped)
 
 ## Modifiers
@@ -38,9 +38,44 @@
 
 ### **POST** `/api/mcq/new/`
 
-### **GET** `/api/mcqs?id=758439`
+#### Expected bedy
+
+  ```json
+  {
+   "title":"addition: 1",
+    "question":"1+1 ?",
+    "answers": [
+        "2",
+        "3",
+        "1",
+        "5",
+    ],
+    "correct":[
+        0,
+    ],
+    "explanation":"I + I = II (2)",
+  }
+  ```
+
+  following struct
+
+  ```go
+  struct {
+    Title string
+    Question MdString
+    Answers []MdString
+    Correct []int
+    Explanation MdString
+  }
+  ```
+
+### **GET** `/api/mcqs/`
+
+see **GET** `api/questions/`
 
 ### **PUT** `/api/mcqs/`
+
+see **PUT** `api/questions/`
 
 ---
 
